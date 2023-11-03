@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webcam and People Counter</title>
+</head>
+<body>
+    <h1>Webcam Feed</h1>
+    <video id="webcam" autoplay></video>
+    <h2>People Count</h2>
+    <p>People In: <span id="people-in">0</span></p>
+    <p>People Out: <span id="people-out">0</span></p>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const webcam = document.getElementById('webcam');
+            const peopleIn = document.getElementById('people-in');
+            const peopleOut = document.getElementById('people-out');
+
+            // Use getUserMedia to access the user's webcam
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    webcam.srcObject = stream;
+                })
+                .catch(error => {
+                    console.error('Error accessing webcam:', error);
+                });
+
+            // Function to update people counts
+            function updatePeopleCounts() {
+                // Make an AJAX request to your Flask server to get the people counts
+                fetch('/get_people_counts')
+                    .then(response => response.json())
+                    .then(data => {
+                        peopleIn.textContent = data.people_in;
+                        peopleOut.textContent = data.people_out;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                    });
+            }
+
+            // Periodically update people counts
+            setInterval(updatePeopleCounts, 1000);
+        });
+    </script>
+</body>
+</html>
