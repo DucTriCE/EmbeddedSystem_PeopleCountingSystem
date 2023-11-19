@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.8)
+set(PROJECT_NAME main)
+project(${PROJECT_NAME})
+find_package( OpenCV REQUIRED )
+set(ncnn_DIR "/home/raspberrypi/ncnn/build/install/lib/cmake/ncnn" CACHE PATH "Directory that contains ncnnConfig.cmake")
+find_package(ncnn REQUIRED)
+
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../src)
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/../src)
+include_directories(include)
+
+AUX_SOURCE_DIRECTORY(/home/raspberrypi/People_Counting_System/People_Counting_cpp/src DIR_SRCS)
+add_executable( ${PROJECT_NAME} ${DIR_SRCS})
+message("OpenCV_LIBS = ${OpenCV_INCLUDE_DIRS}")
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+target_link_libraries(${PROJECT_NAME} ncnn)

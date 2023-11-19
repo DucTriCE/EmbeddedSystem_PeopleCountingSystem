@@ -1,0 +1,3 @@
+/home/raspberrypi/People_Counting_System/People_Counting_cpp/build/CMakeFiles/main.dir
+/home/raspberrypi/People_Counting_System/People_Counting_cpp/build/CMakeFiles/edit_cache.dir
+/home/raspberrypi/People_Counting_System/People_Counting_cpp/build/CMakeFiles/rebuild_cache.dir
