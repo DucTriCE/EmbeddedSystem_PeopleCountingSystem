@@ -42,7 +42,8 @@ The integration of these components on the Raspberry Pi platform enables real-ti
 
 To set up and run the Automatic People Counting System on your Raspberry Pi, follow these steps:
 
-1. Clone this repository:
+0. Use SSH to connect to your Raspberry Pi or you can plug a HDMI Port from your Rasp to a screen.
+1. Clone this repository to your Raspberry Pi:
 
     ```bash
     git clone https://github.com/yourusername/automatic-people-counting.git
