@@ -32,7 +32,11 @@ The system utilizes the power of YOLOFastestV2, optimized for Raspberry Pi with 
 
 The integration of these components on the Raspberry Pi platform enables real-time processing, making it suitable for various applications like occupancy monitoring, retail analytics, and more.
 
-![Demo](images/System.jpg)
+![Demo1](images/Demo1.jpg)
+![Demo2](images/Demo2.jpg)
+
+
+![OLED](images/OLED.png)
 
 ## Getting Started
 
