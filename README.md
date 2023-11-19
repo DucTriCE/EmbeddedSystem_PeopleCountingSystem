@@ -32,6 +32,8 @@ The system utilizes the power of YOLOFastestV2, optimized for Raspberry Pi with 
 
 The integration of these components on the Raspberry Pi platform enables real-time processing, making it suitable for various applications like occupancy monitoring, retail analytics, and more.
 
+![Demo](images/System.jpg)
+
 ## Getting Started
 
 To set up and run the Automatic People Counting System on your Raspberry Pi, follow these steps:
@@ -52,6 +54,8 @@ For OLED_Displaying\OLED.py: line 60.
 For People_Counting_cpp\src\main.cpp: line 296
 
 5. If you modify the main.cpp, change your directory to "People_Counting_cpp\build" and run the below command to compile the main file.
+
+6. (Optional) If you want to change the way people exitting or entering an area for counting purposes, just switch the two counting variable which you could find in the main.cpp
 ```bash 
 make -j4
 ```
